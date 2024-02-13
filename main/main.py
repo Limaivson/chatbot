@@ -9,7 +9,7 @@ image = response_image
 
 def main(input_type_chosen):
     if input_type_chosen == 1:
-        message = input(print('O que você deseja?'))
+        message = input('O que você deseja?\n')
         print(text.responseGeminai(message))
     # TODO: EM CONSTRUÇÃO
     # elif input_type_chosen == 2:
@@ -22,5 +22,5 @@ def main(input_type_chosen):
         print('Entrada inválida')
 
 
-input_type = int(input(print('Selecione o tipo de entrada:\n1 - Texto\n2 - Voz\n3 - Imagem')))
+input_type = int(input('Selecione o tipo de entrada:\n1 - Texto\n2 - Voz\n3 - Imagem\n'))
 main(input_type)
