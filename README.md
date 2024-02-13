@@ -16,7 +16,7 @@ O Chatbot lê textos, imagens e voz utilizando o Gemini. Ele é capaz de respond
 1. Clone o repositório do projeto:
 
 ```
-git clone 
+git clone https://github.com/Limaivson/chatbot/tree/main
 ```
 
 2. Instale as dependências do projeto:
