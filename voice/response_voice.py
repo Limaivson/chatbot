@@ -17,12 +17,9 @@ class ResponseVoice:
             engine = pyttsx3.init()
 
             voices = engine.getProperty('voices')
-            engine.setProperty('rate', 180)
+            engine.setProperty('rate', 150)
 
-            for index, voice in enumerate(voices):
-                print(index, voice.name)
-
-            voice = 1
+            voice = 0
             engine.setProperty('voice', voices[voice].id)
 
         if self.microphone:
@@ -45,11 +42,11 @@ class ResponseVoice:
                     audio = r.listen(fonte)
                     print("Enviando para reconhecimento")
                     try:
-                        texto = r.recognize_google_cloud(audio, language="pt-BR")
+                        texto = r.recognize_google(audio, language="pt-BR")
                         print("Você disse: {}".format(texto))
                     except Exception as e:
                         print("Não entendi o que você disse. Erro", e)
-                        texto = ""
+                        texto = " "
             else:
                 texto = input("Escreva sua mensagem (ou #sair): ")
 
