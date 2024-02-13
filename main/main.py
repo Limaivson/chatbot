@@ -9,8 +9,16 @@ image = response_image
 
 def main(input_type_chosen):
     if input_type_chosen == 1:
-        message = input('O que você deseja?\n')
-        print(text.responseGeminai(message))
+        message = ''
+        while message != '0':
+            if message == '':
+                message = input('Digite 0 para parar a conversa\nVocê: ')
+                if message == '0':
+                    break
+                print(f'Gemini: {text.responseGeminai(message)}')
+            else:
+                message = input('Você: ')
+                print(f'Gemini: {text.responseGeminai(message)}')
     # TODO: EM CONSTRUÇÃO
     # elif input_type_chosen == 2:
     #     voz = input(print('Fale o que você deseja'))
