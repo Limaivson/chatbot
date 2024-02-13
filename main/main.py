@@ -1,8 +1,8 @@
 from text.response_text import ResponseText
-from voice import response_voice
+from voice.response_voice import ResponseVoice
 from image.response_image import ResponseImage
 
-voice = response_voice
+voice = ResponseVoice()
 text = ResponseText()
 image = ResponseImage()
 
@@ -19,10 +19,9 @@ def main(input_type_chosen):
             else:
                 message = input('Você: ')
                 print(f'Gemini: {text.responseGeminai(message)}')
-    # TODO: EM CONSTRUÇÃO
-    # elif input_type_chosen == 2:
-    #     voz = input(print('Fale o que você deseja'))
-    #     voice.responseGeminai(voz)
+
+    elif input_type_chosen == 2:
+        voice.read_voice()
     elif input_type_chosen == 3:
         image_path = ''
         print('Digite 0 para parar a conversa\nou')
