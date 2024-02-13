@@ -1,10 +1,10 @@
 from text.response_text import ResponseText
 from voice import response_voice
-from image import response_image
+from image.response_image import ResponseImage
 
 voice = response_voice
 text = ResponseText()
-image = response_image
+image = ResponseImage()
 
 
 def main(input_type_chosen):
@@ -23,9 +23,15 @@ def main(input_type_chosen):
     # elif input_type_chosen == 2:
     #     voz = input(print('Fale o que você deseja'))
     #     voice.responseGeminai(voz)
-    # TODO: EM CONSTRUÇÃO
-    # elif input_type_chosen == 3:
-    #     image.responseGeminai(output)
+    elif input_type_chosen == 3:
+        image_path = ''
+        print('Digite 0 para parar a conversa\nou')
+        while image_path != '0':
+            image_path = input('Digite o nome da imagem que deseja usar:\n')
+            if image_path == '0':
+                break
+            message = input('O que deseja que o gemini faça com a imagem?\n')
+            print(f'Gemini: {image.read_image(image_path, message)}')
     else:
         print('Entrada inválida')
 
